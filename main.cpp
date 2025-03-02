@@ -19,11 +19,13 @@ struct Przedmiot {
   int index;
   int ilosc;
   bool pior;
+  string PelnaNazwa;
 }pol, ang, fiz, jez, rel, mat;
-void PrzypisywanieDoPrzedmiotu(Przedmiot &przedmiot, int liczba, int pioryt, int index){
+void PrzypisywanieDoPrzedmiotu(Przedmiot &przedmiot, int liczba, int pioryt, int index, string nazwa){
   przedmiot.ilosc = liczba;
   przedmiot.pior = pioryt;
   przedmiot.index = index;
+  przedmiot.PelnaNazwa = nazwa;
 }
 void losowanieLekcji(vector<Przedmiot> lekcje, int lek){
   for(int i = 0; i < 6; i++){
@@ -88,12 +90,12 @@ void losowanieLekcji(vector<Przedmiot> lekcje, int lek){
 int main () {
   srand(time(NULL));
   int lek = 0;
-  PrzypisywanieDoPrzedmiotu(pol, 5, false, 6);
-  PrzypisywanieDoPrzedmiotu(ang, 5, false, 1);
-  PrzypisywanieDoPrzedmiotu(mat, 5, false, 2);
-  PrzypisywanieDoPrzedmiotu(fiz, 5, false, 3);
-  PrzypisywanieDoPrzedmiotu(jez, 5, true, 4);
-  PrzypisywanieDoPrzedmiotu(rel, 5, true, 5);
+  PrzypisywanieDoPrzedmiotu(pol, 5, false, 6, "polski");
+  PrzypisywanieDoPrzedmiotu(ang, 5, false, 1, "angielski");
+  PrzypisywanieDoPrzedmiotu(mat, 5, false, 2, "matematyka");
+  PrzypisywanieDoPrzedmiotu(fiz, 5, false, 3, "fizyka");
+  PrzypisywanieDoPrzedmiotu(jez, 5, true, 4, "język obcy");
+  PrzypisywanieDoPrzedmiotu(rel, 5, true, 5, "religia");
   vector<Przedmiot> lekcje = {pol, ang, mat, fiz, jez, rel };
   losowanieLekcji(lekcje, lek);
   Wypisz();
