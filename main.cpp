@@ -38,44 +38,12 @@ void losowanieLekcji(vector<Przedmiot> lekcje, int lek){
             lekcje[lek].ilosc--;
             break;
           }
-          else if(lekcje[lek].pior){
-            for (Przedmiot test : lekcje){
-              if (test.index != lekcje[lek].index &&  test.ilosc > 0 && test.pior) {
-                plan[i][j] = test.index;
-                test.ilosc--;
-                break;
-              }
-            }
-            if (plan[i][j] != 0) {
-              break;
-            }
-            while (true){
-              lek = rand() % 6;
-              if(lekcje[lek].ilosc > 0){
-                plan[i][j] = lekcje[lek].index;
-                lekcje[lek].ilosc--;
-                break;
-              }
-            }
-            break;
-          }
-          else{
-            while (true) {
-              lek = rand() % 6;
-              if (lekcje[lek].ilosc > 0) {
-                plan[i][j] = lekcje[lek].index;
-                lekcje[lek].ilosc--;
-                break;
-              }
-            }
-            break;        
-          }
         }
       }
       else{
         while(true){
           lek = rand() % 6;
-          if(lekcje[lek].ilosc > 0) {
+          if(lekcje[lek].ilosc > 0 && lekcje[lek].pior == false) {
             plan[i][j] = lekcje[lek].index;
             lekcje[lek].ilosc--;
             break;
