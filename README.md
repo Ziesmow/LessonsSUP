@@ -1,2 +1,2 @@
-# Program to creating schedules 
-nothig less nothing more .: 
+# Program to creating schedules for school's 
+nothig less nothing more .: < /br>
